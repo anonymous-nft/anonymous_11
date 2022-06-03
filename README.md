@@ -1,3 +1,11 @@
+First Create a conda environement
+	conda create --name nft_env
+	conda activate nft_env 
+
+To install the dependncies-
+	pip install -r requirements.txt
+
+
 To train a backdoor model with "blend" attack with poison ratio of "10%"-
 
 	python train_backdoor_cifar.py --poison-type blend --posion-rate 0.10 --output-dir your/folder/to/save --gpuid 0 
