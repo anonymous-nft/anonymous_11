@@ -24,7 +24,7 @@ def main(parser, transform_train, transform_test):
     ## Set the preliminary settings, e.g. radnom seed 
     args = parser.parse_args()
     args_dict = vars(args)
-    # random.seed(123)
+    random.seed(123)
     os.makedirs(args.output_dir, exist_ok=True)
     device =  'cpu'
     torch.cuda.set_device(args.gpuid)
