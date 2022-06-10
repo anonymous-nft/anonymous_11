@@ -16,7 +16,7 @@
 
 # To remove backdoor-
 	
-	python Remove_Backdoor.py --poison-type blend --val-frac 0.01 --output-dir your/folder/to/save --gpuid 0 
+	python Remove_Backdoor.py --poison-type blend --val-ratio 0.01 --output-dir your/folder/to/save --gpuid 0 
 
 
 
