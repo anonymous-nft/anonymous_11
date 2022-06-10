@@ -7,14 +7,12 @@ import torch
 from torch.utils.data import DataLoader
 from torchvision.datasets import CIFAR10
 import torchvision.transforms as transforms
-from data_loader import * 
-from config import get_arguments
-import models
-import data.poison_cifar as poison
-from autoaugment import CIFAR10Policy, ImageNetPolicy
+import networks
+import data.badnets_blend as poison
+from data.dataloader_cifar import * 
+from NFT_Strong import NFTPolicy
 from PIL import Image
-from data_loader import *
-
+import random
 
 parser = argparse.ArgumentParser(description='Train poisoned networks')
 
@@ -177,7 +175,7 @@ def main():
         raise ValueError('Please use valid backdoor attacks: [badnets | blend | CLB]')
 
     ## Step 2: prepare model, criterion, optimizer, and learning rate scheduler.
-    net = getattr(models, args.arch)(num_classes=10).to(device)
+    net = getattr(networks, args.arch)(num_classes=10).to(device)
     criterion = torch.nn.CrossEntropyLoss().to(device)
     optimizer = torch.optim.SGD(net.parameters(), lr=args.lr, momentum=0.9, weight_decay=5e-4)
     scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=args.schedule, gamma=0.1)

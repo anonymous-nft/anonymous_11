@@ -17,7 +17,6 @@ from NFT_Strong import NFTPolicy
 from PIL import Image
 from data.dataloader_cifar import *
 import matplotlib.pyplot as plt
-# import network_cifar10
 import random 
 
 def main(parser, transform_train, transform_test):
