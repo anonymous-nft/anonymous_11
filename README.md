@@ -7,7 +7,7 @@
 
 # To train a backdoor model with "blend" attack with poison ratio of "10%"-
 
-	python train_backdoor_cifar.py --poison-type blend --posion-rate 0.10 --output-dir your/folder/to/save --gpuid 0 
+	python train_backdoor_cifar.py --poison-type blend --poison-rate 0.10 --output-dir your/folder/to/save --gpuid 0 
 
 # To train a benign model-
 
